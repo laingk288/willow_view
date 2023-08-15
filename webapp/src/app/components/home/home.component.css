@@ -1,0 +1,8 @@
+#homeCarousel{
+    width:100vw;
+    /* height: 600px; */
+}
+   
+.carousel-control-next, .carousel-control-prev{
+    filter: invert(100%);
+}

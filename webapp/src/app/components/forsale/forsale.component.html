@@ -1,0 +1,161 @@
+<!--Advertisement Cards-->
+<div class="card" *ngFor="let s of sale" style="width: 18rem;">
+  <img [src]="'http://localhost:3006/forsalepics/'+ s.image" class="card-img-top" alt="image of item for sale">
+  <div class="card-body">
+    <h5 class="card-title">{{s.equipment_name}}</h5>
+    <p class="card-text">{{s.details}}</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Manufacturer {{s.manufacturer}}</li>
+    <li class="list-group-item">Model {{s.model}}</li>
+    <li class="list-group-item"> Meter Read {{s.meter_reads | number:'1.0-0'}}</li>
+    <li class="list-group-item">Price {{s.price | currency: 'symbol': '$': '1.0-0'}}</li>
+  </ul>
+  <div class="card-body">
+    
+    <!-- Button Edit modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal" (click)="makeEditActive(s.equipment_id)">
+      Edit
+    </button>
+    <button type="button" class="btn btn-danger" (click)="delete(s.equipment_id)">Delete</button>
+  </div>
+</div>
+
+<!-- Button Add modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal" (click)="makeEditFalse()">
+  Add New Item
+</button>
+
+<!-- Modal for Editing -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" *ngIf="isEdit;else createTaskTitle" id="exampleModalLabel" >Edit</h1>
+        <ng-template #createTaskTitle>
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Add Task</h1>
+      </ng-template>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+                <!-- Form for Editing Advertisement Data -->
+                <form [formGroup]="saleForm" (ngSubmit)="edit()">
+
+                  <div class="mb-3">
+                    <label class="form-label">Equipment Name</label>
+                    <input type="text" class="form-control" formControlName="equipment_name">
+                  </div>
+        
+                  <div class="mb-3">
+                    <label class="form-label">Manufacturer</label>
+                    <select class="form-select" formControlName="manufacturer">
+                      <option selected>Select the Manufacturer</option>
+                      <option value="Bourgault">Bourgault</option>
+                      <option value="Case">Case</option>
+                      <option value="Enterprise">Enterprise</option>
+                      <option value="Ford">Ford</option>
+                      <option value="John Deere">John Deere</option>
+                      <option value="MacDon">MacDon</option>
+                    </select>
+                  </div>
+        
+                  <div class="mb-3">
+                    <label class="form-label">Model</label>
+                    <input type="text" class="form-control" formControlName="model">
+                  </div>
+        
+                  <div class="mb-3">
+                    <label class="form-label">Meter Reads</label>
+                    <input type="number" class="form-control" formControlName="meter_reads">
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Price</label>
+                    <input type="number" class="form-control" formControlName="price">
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Details</label>
+                    <textarea type="text" class="form-control" formControlName="details"></textarea>
+                  </div>
+        
+                  <div class="mb-3">
+                    <label class="form-label">Image</label>
+                    <input class="form-control" type="file" (change)="onChange($event)" accept="image/png, image/jpeg">
+                  </div>
+        
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" [disabled]="saleForm.invalid" data-bs-dismiss="modal">Save Changes</button>
+                  </div>
+        
+                </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<!-- Modal for Adding a New Advertisement -->
+<div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Item</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Form for Entering New Advertisement Data -->
+        <form [formGroup]="saleForm" (ngSubmit)="add()">
+
+          <div class="mb-3">
+            <label class="form-label">Equipment Name</label>
+            <input type="text" class="form-control" formControlName="equipment_name">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Manufacturer</label>
+            <select class="form-select" formControlName="manufacturer">
+              <option selected>Select the Manufacturer</option>
+              <option value="Bourgault">Bourgault</option>
+              <option value="Case">Case</option>
+              <option value="Enterprise">Enterprise</option>
+              <option value="Ford">Ford</option>
+              <option value="John Deere">John Deere</option>
+              <option value="MacDon">MacDon</option>
+            </select>
+
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Model</label>
+            <input type="text" class="form-control" formControlName="model">
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Meter Reads</label>
+            <input type="number" class="form-control" formControlName="meter_reads">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Price</label>
+            <input type="number" class="form-control" formControlName="price">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Details</label>
+            <textarea type="text" class="form-control" formControlName="details"></textarea>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Image</label>
+            <input class="form-control" type="file" (change)="onChange($event)" accept="image/png, image/jpeg">
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" [disabled]="saleForm.invalid">Added Item</button>
+          </div>
+
+        </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
