@@ -1,40 +1,30 @@
 <!--Carousel for top of HOME PAGE-->
-<div class="row">
-    <div class="col-6">
-        <div id="homeCarousel" class="carousel slide carousel-fade">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="./assets/homeimages/binyard_0452.JPG" class="d-block w-100" alt="image of yard">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/homeimages/combinerow_7072.JPG" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/homeimages/wheat_2021.jpeg" class="d-block w-100" alt="...">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
+<div id="homeCarousel" class="carousel slide">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="active c-point" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="1" aria-label="Slide 2" class="c-point"></button>
+      <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="2" aria-label="Slide 3" class="c-point"></button>
     </div>
-</div>
-<br>
+    <div class="carousel-inner">
+      <div class="carousel-item active c-item">
+        <img src="./assets/homeimages/combinerow_7072.JPG" class="d-block w-100 c-img" alt="Slide 1">
+      </div>
+      <div class="carousel-item c-item">
+        <img src="./assets/homeimages/binyard_0452.JPG" class="d-block w-100 c-img" alt="Slide 2">
+      </div>
+      <div class="carousel-item c-item">
+        <img src="./assets/homeimages/wheat_2021.jpeg" class="d-block w-100 c-img" alt="Slide 3">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
 
 <!--3 Cards total in Home Page-->
 <div class="row mx-3">

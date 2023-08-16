@@ -1,8 +1,21 @@
-#homeCarousel{
+/* #homeCarousel{
     width:100vw;
-    /* height: 600px; */
-}
+  
+} */
    
 .carousel-control-next, .carousel-control-prev{
+    filter: invert(100%);
+}
+
+.c-item{
+    height:480px;
+}
+
+.c-img{
+    height: 100%;
+    object-fit:cover;
+    /* filter: brightness(); */
+}
+.c-point{
     filter: invert(100%);
 }

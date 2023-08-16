@@ -21,9 +21,13 @@ const GalleryPhoto = config.define('galleryphoto',{
         type: Sequelize.STRING,
         allowNull: false
     },
-    filepath: {
+    videopath: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: true
+    },
+    photopath: {
+        type: Sequelize.STRING,
+        allowNull: true
     },
     upload_date: {
         type: Sequelize.DATE,

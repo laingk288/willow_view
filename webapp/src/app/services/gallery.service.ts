@@ -9,8 +9,9 @@ export class GalleryService {
 
   constructor(private http: HttpClient) { }
 
-  getGallery(){
+  getGallery() {
     return this.http.get<Igallery[]>('http://localhost:3006/gallery');
   } //now injecting service into gallery.component.ts
-  
+
+
 }

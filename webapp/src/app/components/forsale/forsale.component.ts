@@ -20,7 +20,6 @@ export class ForsaleComponent {
   editEquipmentId: number = 0;//store information about the edit equipment id. When we're in edit  mode we will set the editEquipId to some other value created other than zero.
   equipmentId: number = 0;
 
-
   constructor(private formBuilder: FormBuilder, private route: ActivatedRoute, private advertisementsService: AdvertisementsService, private router: Router) {
     this.saleForm = formBuilder.group({
       equipment_name: ['', [Validators.required]],
@@ -31,50 +30,20 @@ export class ForsaleComponent {
       details: ['', [Validators.required]],
     });
 
-   
     this.advertisementsService.getAdvertisements().subscribe({
       next: (result) => {
         this.sale = result;
-
       }
     })
-
-    // let equipmentId = this.route.snapshot.paramMap.get('equipment_id');
-
-    //Check if Equipment ID was specified in the URL. Yes= edit mode, If it's not there= creating new ad
-    //if equipment ID is not null, it mean we're in edit mode. If it's null, we're creating a new ad
-    // if (equipmentId !== null) {
-    //   this.isEdit = true;
-    //   this.editEquipmentId = parseInt(equipmentId);
-
-      //get advertisement record from backend based on the equipmentID
-      // this.advertisementsService.getAdvertisement(this.equipmentId).subscribe({
-      //   next: (result) => {
-      //     //PrePopulates the form
-      //     this.saleForm.patchValue(result);
-      //     console.log(result);
-      //   }
-      // })
-    }
-
-
-    // onSubmit(){
-    //   let formData = this.saleForm.value;
-    //   console.log(formData);
-    //   if(this.isEdit){
-
-    //   } else 
-      
-    // }
-
-
+  }
   onChange(event: any) {
     this.file = event.target.files[0];
   }
-  makeEditActive(editId:number) {
+  //Method created for the Edit Button to set isEdit to true to indicate we're in Edit mode
+  makeEditActive(editId: number) {
     this.isEdit = true;
-    this.equipmentId= editId;
-    console.log(this.equipmentId);
+    this.equipmentId = editId;
+    // console.log(this.equipmentId);
     this.advertisementsService.getAdvertisement(this.equipmentId).subscribe({
       next: (result) => {
         //PrePopulates the form
@@ -83,10 +52,10 @@ export class ForsaleComponent {
       }
     })
   }
-  makeEditFalse(){
+  //Method created for Add New Item Method to indicate we're not in Edit mode
+  makeEditFalse() {
     this.isEdit = false;
   }
-
 
   add() {
     let formData = new FormData();
@@ -95,7 +64,6 @@ export class ForsaleComponent {
     for (let key in this.saleForm.value) {
       formData.append(key, this.saleForm.value[key]);
     }
-
     if (this.file !== null) {
       formData.append('image', this.file);
     }
@@ -110,7 +78,8 @@ export class ForsaleComponent {
       }
     });
   }
-  edit(){
+  //Method in form where ngSubmit="edit()"" is called on the submit event
+  edit() {
     this.advertisementsService.editAdvertisement(this.equipmentId, this.saleForm.value).subscribe({
       next: (result) => {
         alert('Advertisement was edited successfully');
@@ -122,12 +91,11 @@ export class ForsaleComponent {
       }
     })
   }
-
+  //Method created for Delete Button. Once clicked, will delete by the equipment ID 
   delete(equipment_id: number) {
     this.advertisementsService.deleteAdvertisement(equipment_id).subscribe({
       next: (result) => {
         alert('Advertisment deleted successfully');
-        //do I need anything here? 
       },
       error: (err) => {
         console.log(err);
@@ -135,5 +103,4 @@ export class ForsaleComponent {
       }
     });
   }
-
 }

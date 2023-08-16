@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Igallery } from 'src/app/interfaces/igallery';
 import { GalleryService } from 'src/app/services/gallery.service';
 
@@ -7,7 +7,7 @@ import { GalleryService } from 'src/app/services/gallery.service';
   templateUrl: './gallery.component.html',
   styleUrls: ['./gallery.component.css']
 })
-export class GalleryComponent {
+export class GalleryComponent implements OnInit {
 
   photoGallery!: Igallery[];
 
@@ -22,4 +22,11 @@ export class GalleryComponent {
       }
     });
   }
+
+  //KL can work on this later 
+  ngOnInit(): void {}
+  //show image Preview
+  // onPreviewImage(){}
+
+
 }

@@ -3,6 +3,7 @@ export interface Igallery {
     title: string;
     description: string; 
     media_type: string;
-    filepath: string;
+    videopath: string;
+    photopath: string;
     upload_date: Date; 
 }

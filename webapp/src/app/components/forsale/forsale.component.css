@@ -1,0 +1,14 @@
+.card-img-top{
+    height:350px;
+    object-fit: cover;
+}
+.card-text{
+    height:100px;
+}
+/* #addButton{
+    display: flex;
+    justify-content: flex-end;
+} */
+.btn-wv{
+    background-color: #B1AE91;
+}
