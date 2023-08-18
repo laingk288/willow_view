@@ -1,8 +1,8 @@
-/* #homeCarousel{
-    width:100vw;
-  
-} */
-   
+carousel-inner{
+    margin:auto;
+
+
+}
 .carousel-control-next, .carousel-control-prev{
     filter: invert(100%);
 }
@@ -14,8 +14,17 @@
 .c-img{
     height: 100%;
     object-fit:cover;
-    /* filter: brightness(); */
+    filter: brightness();
 }
 .c-point{
     filter: invert(100%);
+}
+
+#home-card-container{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.info-cards{
+    margin-bottom: 50px;
 }

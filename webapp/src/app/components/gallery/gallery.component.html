@@ -1,32 +1,65 @@
 <!-- Carousel for 3 videos -->
-<div>
-  <div id="videoGalleryCarousel" class="carousel slide">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#videoGalleryCarousel" data-bs-slide-to="0" class="active"
-        aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#videoGalleryCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#videoGalleryCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-    <!-- <div *ngFor="let p of photoGallery" class="carousel-inner"> -->
-      <!-- <div class="carousel-item active"> -->
-        <!-- <img [src]="'http://localhost:3006/drone_vid/'+ p.videopath" class="d-block w-100" alt="..."> -->
-      <!-- </div>
-      <div class="carousel-item">
-        <img [src]="..." class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="..." class="d-block w-100" alt="...">
-      </div>
-    </div> -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#videoGalleryCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#videoGalleryCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+<div id="videoCarouselGallery" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#videoCarouselGallery" data-bs-slide-to="0" class="active bg-dark"
+      aria-current="true" aria-label="Slide 1"></button>
+    <button class="bg-success" type="button" data-bs-target="#videoCarouselGallery" data-bs-slide-to="1"
+      aria-label="Slide 2"></button>
+    <button class="bg-success" type="button" data-bs-target="#videoCarouselGallery" data-bs-slide-to="2"
+      aria-label="Slide 3"></button>
   </div>
+  <div class="droneVideos">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="p-2 m-2">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <video class="video"controls (click)="toggleVideo()" #videoPlayer>
+                  <source src='http://localhost:3006/drone_vid/seeding_478.MOV' />
+                  Browser not supported
+                </video>
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Seeding Season</h5>
+                  <p>Seeding operation at Willow View Farm commences in May and completed within four weeks. Two drills are used to direct seed all crops. </p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <video class="video" controls (click)="toggleVideo()" #videoPlayer>
+                  <source src='http://localhost:3006/drone_vid/spraying_479.MOV' />
+                  Browser not supported
+                </video>
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Spraying Season</h5>
+                  <p>In-crop spraying takes place in June to achieve early weed control on all crops. A Case high clearance sprayer is used to spray crops using a GPS system to apply herbicide to a specific area without any overlap. A fungicide application follows in-crop herbicide in late June and July to protect plants from the onset of disease. In August, cereals and pulses are desiccated with a sprayer application.</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <video  class="video" controls (click)="toggleVideo()" #videoPlayer>
+                  <source src='http://localhost:3006/drone_vid/harvest_264.MOV'/>
+                  Browser not supported
+                </video>
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Harvest</h5>
+                  <p>Harvest commences when crops are sprayed with a desiccant to dry down each plant to allow the crop to be combined using straight-cut headers. The canola is swathed to allow the canola plant to fully mature. The goal is to complete harvest at by the end of September. </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#videoCarouselGallery" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next " type="button" data-bs-target="#videoCarouselGallery" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+  
+
 </div>
 
 
@@ -34,7 +67,8 @@
 <div class="gallery-lightbox-container">
   <div class="gallery">
     <div *ngFor="let p of photoGallery" class="gallery-img">
-      <img [src]="'http://localhost:3006/gallery/'+ p.photopath" alt="displaying WV photo gallery">
+      <img *ngIf="p.media_type === 'photo'" [src]="'http://localhost:3006/gallery/'+ p.photopath"
+        alt="displaying WV photo gallery">
     </div>
   </div>
   <!-- <div class="lightbox">

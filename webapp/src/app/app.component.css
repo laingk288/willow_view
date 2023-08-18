@@ -35,19 +35,20 @@ nav{
     position: sticky;
     text-align: center;
     font-size: 25px;
-    background-color: #37392E;
-    /* background-color: rgba(55, 57, 46, 0.5); */
+    /* background-color: #37392E; */
+    background-color: rgba(55, 57, 46, 0.7);
 }
 .nav-link:hover{
     color: #B2675E;
 }
 .nav-link{
     color: white;
+    font-size: 32px;
 }
 .is active{
     color:white;
 }
-isactive a{
+nav a.active{
     color:white!important;
 }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Igallery } from 'src/app/interfaces/igallery';
 import { GalleryService } from 'src/app/services/gallery.service';
 
@@ -8,6 +8,7 @@ import { GalleryService } from 'src/app/services/gallery.service';
   styleUrls: ['./gallery.component.css']
 })
 export class GalleryComponent implements OnInit {
+  @ViewChild('videoPlayer') videoplayer: ElementRef | undefined;
 
   photoGallery!: Igallery[];
 
@@ -23,7 +24,10 @@ export class GalleryComponent implements OnInit {
     });
   }
 
-  //KL can work on this later 
+
+  toggleVideo(){}
+
+  //Lightbox thingz KL can work on this later 
   ngOnInit(): void {}
   //show image Preview
   // onPreviewImage(){}

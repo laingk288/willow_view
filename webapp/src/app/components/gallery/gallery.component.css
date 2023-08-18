@@ -1,12 +1,34 @@
+/* Styling for Carousel */
 
+.droneVideos{
+    height: 80vh;
+
+}
+.carousel-control-next, .carousel-control-prev{
+    filter: invert(100%);
+}
+.video{
+    height:70vh;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+/* .carousel-caption{
+    width:1000px;
+} */
+
+
+/* Styling for Light-box  */
 :host {
     display: block;
     text-align: center;
     
 }
 
+
 .gallery-lightbox-container {
     position: relative;
+    margin-top: 150px;
     display: inline-block;
     padding: 25px;
     .gallery {

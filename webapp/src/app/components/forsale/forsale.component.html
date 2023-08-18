@@ -1,15 +1,14 @@
-
 <!--Advertisement Cards-->
 <div class="row">
   <!-- Button Add modal -->
-<div id="addButton" class="m-4 col-12">
-  <div>
-    <button type="button" class="btn btn-wv" data-bs-toggle="modal" data-bs-target="#editModal"
-      (click)="makeEditFalse()">
-      Add New Item
-    </button>
+  <div id="addButton" class="m-4 col-12">
+    <div>
+      <button type="button" class="btn btn-wv" data-bs-toggle="modal" data-bs-target="#editModal"
+        (click)="makeEditFalse()">
+        Add New Item
+      </button>
+    </div>
   </div>
-</div>
   <div class="col-4 offset-1.5" *ngFor="let s of sale">
     <div class="card m-4" style="width: 500px;">
       <img [src]="'http://localhost:3006/forsalepics/'+ s.image" class="card-img-top" alt="image of item for sale">

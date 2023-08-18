@@ -7,9 +7,10 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { ForsaleComponent } from './components/forsale/forsale.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
-import { ProfilesComponent } from './components/profiles/profiles.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AdminComponent } from './components/profiles/admin/admin/admin.component';
+import { UserComponent } from './components/profiles/user/user/user.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
     AboutComponent,
     ForsaleComponent,
     GalleryComponent,
-    ProfilesComponent
+    AdminComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
