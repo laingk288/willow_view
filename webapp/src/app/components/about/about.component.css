@@ -24,3 +24,13 @@ h1{
         font-size: calc(1.525rem + 3.3vw);
     }
 }
+.card-info{
+    margin-bottom: 50px;
+}
+#landbase_photo{
+    margin-bottom: 10px;
+}
+#diagram{
+    margin-top: 5px;
+    margin-bottom: 10px;
+}

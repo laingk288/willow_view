@@ -1,13 +1,26 @@
+
 #body{
     background-color: whitesmoke;
 }
 #login{
     text-decoration: none;
-    color:#B1AE91
+    color:#B1AE91;
+}
+#login-button{
+    border-color: #B1AE91;
+    margin: 5px 5px 5px 0px;
+    
+}
+#logout{
+    color:#B1AE91;
+    background-color:#37392E;
+    border-color:#B1AE91;
+    margin: 5px;
+
 }
 #header{
     display: flex;
-    justify-content: end;
+    justify-content:flex-end;
     background-color: #37392E;
     color: #B1AE91;
     padding: 4px;
@@ -16,12 +29,11 @@
     text-decoration: none;
 }
 #wvlogo{
-    width: 13%;
+    width: 250px;
     position: fixed;
     justify-content: left;
-    padding: 10px 10px 100px 10px;
+    padding: 30px 10px 100px 10px;
     margin-left: 30px;
-
 }
 #sticky-nav{
     height:200px;
@@ -51,6 +63,9 @@ nav{
 nav a.active{
     color:white!important;
 }
+.navbar-toggler{
+    filter: invert(100%);
+}
 
 
 #footer {
@@ -72,6 +87,8 @@ nav a.active{
 (light green)Sage: B1AE91
 (reddish brwn) Redwood: B2675E
 (mid green) Reseda green: 839073
+Platinum #D7D9D7
+yellow: #FFD07B
 
 */
 

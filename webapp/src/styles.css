@@ -13,3 +13,26 @@ body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
 }
+@media screen and (min-width: 700px) {
+
+    body{
+        background-color:#B1AE91;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+
+    body{
+        background-color:#B2675E;
+    }
+
+}
+
+/*Colour Scheme
+(dark green)Black Olive: 37392E
+(light green)Sage: B1AE91
+(reddish brwn) Redwood: B2675E
+(mid green) Reseda green: 839073
+
+*/

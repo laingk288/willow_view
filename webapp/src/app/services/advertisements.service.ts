@@ -24,6 +24,7 @@ export class AdvertisementsService {
   editAdvertisement(equipmentId:any, advertisementData:any){
     return this.http.patch<Iadvertise>(`http://localhost:3006/forsale/${equipmentId}`, advertisementData);
   }
+
   createAdvertisement(advertisementData: any){
     return this.http.post<Iadvertise>('http://localhost:3006/forsale', advertisementData);
   }
@@ -31,7 +32,5 @@ export class AdvertisementsService {
   deleteAdvertisement(equipment_id: number){
     return this.http.delete<Iadvertise>(`http://localhost:3006/forsale/${equipment_id}`);
   }
-
-
 } 
 

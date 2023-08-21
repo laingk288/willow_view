@@ -11,6 +11,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminComponent } from './components/profiles/admin/admin/admin.component';
 import { UserComponent } from './components/profiles/user/user/user.component';
+import { GallerydirectiveDirective } from './directives/gallerydirective.directive';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { UserComponent } from './components/profiles/user/user/user.component';
     ForsaleComponent,
     GalleryComponent,
     AdminComponent,
-    UserComponent
+    UserComponent,
+    GallerydirectiveDirective,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

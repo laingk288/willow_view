@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Irotation } from 'src/app/interfaces/irotation';
+import { Iuser } from 'src/app/interfaces/iuser';
 import { RotationplannerService } from 'src/app/services/rotationplanner.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-admin',
@@ -10,8 +12,12 @@ import { RotationplannerService } from 'src/app/services/rotationplanner.service
 export class AdminComponent {
 
   cropDisplay!: Irotation[];
+  user!:Iuser;
 
-  constructor(private rotationplannerService: RotationplannerService){
+
+  constructor(private rotationplannerService: RotationplannerService, private userService: UserService){
+    this.user = this.userService.getUserData();
+    
     rotationplannerService.getRotationPlanner().subscribe({
       next: (results) => {
         this.cropDisplay = results;
@@ -22,5 +28,6 @@ export class AdminComponent {
       }
     });
   }
+
 
 }

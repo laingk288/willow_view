@@ -7,12 +7,16 @@ import { GalleryService } from 'src/app/services/gallery.service';
   templateUrl: './gallery.component.html',
   styleUrls: ['./gallery.component.css']
 })
-export class GalleryComponent implements OnInit {
+export class GalleryComponent{
   @ViewChild('videoPlayer') videoplayer: ElementRef | undefined;
 
   photoGallery!: Igallery[];
 
-  constructor(private galleryService: GalleryService){
+  constructor(private galleryService: GalleryService, private item:ElementRef){
+    let dom = item.nativeElement;
+    // dom.style.backgroundColor = '#B1AE91';
+    
+    //Display all photos in Database
     galleryService.getGallery().subscribe({
       next: (results) => {
         this.photoGallery = results;
@@ -25,12 +29,13 @@ export class GalleryComponent implements OnInit {
   }
 
 
+  myFunction(){}
+
+
   toggleVideo(){}
 
   //Lightbox thingz KL can work on this later 
-  ngOnInit(): void {}
-  //show image Preview
-  // onPreviewImage(){}
+ 
 
 
 }

@@ -17,7 +17,6 @@ export class ForsaleComponent {
   saleForm!: FormGroup;
   file!: null;
   isEdit: boolean = false;   //indicates whether we're in edit mode or not.  
-  editEquipmentId: number = 0;//store information about the edit equipment id. When we're in edit  mode we will set the editEquipId to some other value created other than zero.
   equipmentId: number = 0;
 
   constructor(private formBuilder: FormBuilder, private route: ActivatedRoute, private advertisementsService: AdvertisementsService, private router: Router) {
@@ -36,6 +35,7 @@ export class ForsaleComponent {
       }
     })
   }
+  //images
   onChange(event: any) {
     this.file = event.target.files[0];
   }
@@ -52,11 +52,15 @@ export class ForsaleComponent {
       }
     })
   }
-  //Method created for Add New Item Method to indicate we're not in Edit mode
+//When Add new Item button is clicked makeEditFalse() executed
   makeEditFalse() {
     this.isEdit = false;
   }
-
+  //Method created to indicate Editing or Adding Item when Form is submitted
+  choose(){
+    if(this.isEdit) {this.edit();} else {this.add();}
+  }
+  //Method called in Choose () to add advertisement
   add() {
     let formData = new FormData();
 
@@ -78,7 +82,7 @@ export class ForsaleComponent {
       }
     });
   }
-  //Method in form where ngSubmit="edit()"" is called on the submit event
+  //Method called in Choose ()to edit advertisement
   edit() {
     this.advertisementsService.editAdvertisement(this.equipmentId, this.saleForm.value).subscribe({
       next: (result) => {

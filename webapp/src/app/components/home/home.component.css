@@ -1,7 +1,5 @@
 carousel-inner{
     margin:auto;
-
-
 }
 .carousel-control-next, .carousel-control-prev{
     filter: invert(100%);
@@ -27,4 +25,14 @@ carousel-inner{
 
 .info-cards{
     margin-bottom: 50px;
+}
+#photo1{
+  object-fit: fill;
+  margin-top: 30px;
+
+}
+
+#photo3{
+    margin-top: 50px;
+
 }
