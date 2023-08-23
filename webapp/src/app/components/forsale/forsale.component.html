@@ -5,7 +5,7 @@
 </div>
 
 
-<!-- Button Add modal -->
+<!-- Add Button -->
 <div id="addButton" class="m-4 col-12 mx-5">
   <div>
     <button type="button" class="btn btn-wv" data-bs-toggle="modal" data-bs-target="#editModal"
@@ -15,7 +15,7 @@
   </div>
 </div>
 
-<!--Advertisement Cards-->
+<!--Advertisement Card-->
 <div class="row">
   <div class="col-md-4 offset-1.5" *ngFor="let s of sale">
     <div class="card m-5" style="width: 500px;">
@@ -33,11 +33,12 @@
       </ul>
       <div class="card-body">
 
-        <!-- Button Edit modal -->
+        <!--  Edit Button -->
         <button type="button" id="edit-button" class="btn btn-dark mx-1" data-bs-toggle="modal" data-bs-target="#editModal"
           (click)="makeEditActive(s.equipment_id)">
           Edit
         </button>
+        <!-- Delete Button -->
         <button type="button" id="delete-button" class="btn btn-danger mx-1" (click)="delete(s.equipment_id)">Delete</button>
       </div>
     </div>
@@ -46,7 +47,7 @@
 
 
 
-<!-- Modal for Editing -->
+<!-- Modal for Editing & Creating Advertisement -->
 <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">

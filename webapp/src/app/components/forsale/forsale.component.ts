@@ -82,7 +82,7 @@ export class ForsaleComponent {
       }
     });
   }
-  //Method called in Choose ()to edit advertisement
+  //Method called in Choose()to edit advertisement
   edit() {
     this.advertisementsService.editAdvertisement(this.equipmentId, this.saleForm.value).subscribe({
       next: (result) => {
