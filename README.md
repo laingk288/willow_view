@@ -1,4 +1,4 @@
-# Willow View Website Application `#B1AE91`
+# Willow View Website Application 
 For my final project to obtain my certificate in Full Stack Development through the UofC, I chose a website application. 
 I developed a website to give the ability to showcase their business. Each user can post, edit and delete advertisements. Gallery used to display images to attract potential employees. Login allows registration and user access to operational records. 
 
