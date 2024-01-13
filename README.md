@@ -13,13 +13,16 @@ I developed a website to give the ability to showcase their business. Each user 
 ![Screenshot 2024-01-13 at 12 39 23 PM](https://github.com/laingk288/willow_view/assets/135386431/59f5d7a6-751a-4ad8-a821-ab157e29ea8c)
 
 
-**ForSale:** modals utlized for editing & adding advertisement and accessed the id of item when editing by using a method.
+**For Sale:** modals utlized for editing & adding advertisement and accessed the id of item when editing by using a method.
 ![Screenshot 2024-01-13 at 12 14 38 PM](https://github.com/laingk288/willow_view/assets/135386431/dcf675ac-701e-42e9-9e9b-adecea4e5e65)
 
-Modal
+
 ![Screenshot 2024-01-13 at 12 48 19 PM](https://github.com/laingk288/willow_view/assets/135386431/3d8c402a-af84-4a20-90f5-a40f7fe6ca94)
 
 
 **Gallery:** video slider/carousel, multi-layered gallery container, and footer
+
+![Screenshot 2024-01-13 at 12 16 13 PM](https://github.com/laingk288/willow_view/assets/135386431/c355508f-b24c-47b4-bcd2-afb95a83ffa6)
+
 
 **Authentication** able to register user, login, and view documents displayed. 
