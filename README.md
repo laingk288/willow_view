@@ -26,3 +26,9 @@ I developed a website to give the ability to showcase their business. Each user 
 
 
 **Authentication** able to register user, login, and view documents displayed. 
+
+![Screenshot 2024-01-13 at 12 19 17 PM](https://github.com/laingk288/willow_view/assets/135386431/b6eb780c-8144-4930-b5d9-dca0ff10ab05)
+
+![Screenshot 2024-01-13 at 12 18 01 PM](https://github.com/laingk288/willow_view/assets/135386431/2d9b95b3-2e57-440e-8448-572cf237da08)
+
+![Screenshot 2024-01-13 at 12 18 25 PM](https://github.com/laingk288/willow_view/assets/135386431/4b285caa-5add-4e5b-a6ca-06e5f116a0c4)
