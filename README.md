@@ -1,5 +1,5 @@
 # Willow View Website Application 
-For my final project to obtain my certificate in Full Stack Development through the UofC, I chose a website application. 
+For my final project to obtain a certificate in Full Stack Development through the U of C, I chose a website application. 
 I developed a website to give the ability to showcase their business. Each user can post, edit and delete advertisements. Gallery used to display images to attract potential employees. Login allows registration and user access to operational records. 
 
 **Key Contribution:** streamlined operational records, advertisements, resulting in cost savings and employee development. Ensured improvements in organizational effectiveness and operational excellence. 
